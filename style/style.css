@@ -477,7 +477,7 @@
 
 @media (max-width: 1024px) {
   .landing{
-    height: 200vh;
+    height: 150vh;
   }
   .landing .container {
     flex-direction: column-reverse;
@@ -1127,7 +1127,7 @@
 
 @media (max-width: 1024px) {
   .services{
-    height: 180vh;
+    height: 150vh;
   }
   .services .container {
     flex-direction: column-reverse;
