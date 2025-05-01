@@ -186,7 +186,7 @@
 }
 
 .on-searching{
-  position: absolute;
+  position: fixed;
   height: 100vh;
   width: 100%;
   background-color: #f3f3f35e;
@@ -796,6 +796,12 @@
 
   .arrow {
     top: 80%;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing .right-section button{
+    width: 300px;
   }
 }
 
