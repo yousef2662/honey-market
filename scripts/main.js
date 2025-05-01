@@ -137,7 +137,7 @@ window.onscroll = function () {
   } else {
     navBar.style.borderBottom = "4px solid transparent";
   }
-  if (window.scrollY >= screen.height - 40) {
+  if (window.scrollY >= screen.height - 120) {
     adjusterMobile.style.animationPlayState = "running";
   }
 };
