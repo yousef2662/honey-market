@@ -6,13 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/signup-bage.css">
   <link rel="stylesheet" href="style/all.min.css">
-  <title>Sign up</title>
+  <title>Log in</title>
+  <link rel="icon" href="images/logo-circle.png">
 </head>
 
 <body>
+  <div class="container log-in-container">
+    <div class="form-container">
+      <form class="with-toggle-menu-right" id="sign-up-p">
+        <h1>Create Account</h1>
 
-  <script src="scripts/all.min.js"></script>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Sign Up</button>
+      </form>
+    </div>
+    <div class="toggle-menu-right" id="sign-in-toggle">
+      <h1>Hellow,Friend!</h1>
+      <p>Register with your personal details to use all </br>site futures</p>
+      <a href="login-bage.html">
+        <button id="to-sign-in">Log In</button>
+      </a>
+    </div>
+  </div>
+
   <script src="scripts/signup-bage.js"></script>
+  <script src="scripts/all.min.js"></script>
 </body>
 
 </html>

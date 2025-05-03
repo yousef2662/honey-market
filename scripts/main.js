@@ -130,6 +130,7 @@ function showTogCon() {
 let navBar = document.querySelector(".nav-bar");
 let progress = document.querySelector(".progress-scroll");
 let adjusterMobile = document.querySelector(".landing .adjuster-mobile .landing-bee")
+let goUp = document.querySelector(".go-up");
 
 window.onscroll = function () {
   if (window.scrollY >= 1) {
@@ -140,8 +141,12 @@ window.onscroll = function () {
   if (window.scrollY >= screen.height - 300) {
     adjusterMobile.style.animationPlayState = "running";
   }
+  if (window.pageYOffset > 100) {
+    goUp.classList.add("active");
+  } else {
+    goUp.classList.remove("active");
+  }
 };
-
 
 
 

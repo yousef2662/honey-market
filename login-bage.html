@@ -7,14 +7,32 @@
   <link rel="stylesheet" href="style/login-bage.css">
   <link rel="stylesheet" href="style/all.min.css">
   <title>Log in</title>
+  <link rel="icon" href="images/logo-circle.png">
 </head>
 
 <body>
+  <div class="container log-in-container">
+    <div class="form-container">
+      <form class="with-toggle-menu-left" id="sign-up-p">
+        <h1>Log In</h1>
 
-  <i class="fas fa-bars"></i>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <a class="forget" href="forget.html">Forget Your Password?</a>
+        <button>Log In</button>
+      </form>
+    </div>
+    <div class="toggle-menu-left" id="sign-up-toggle">
+      <h1>Welcome Back!</h1>
+      <p>Enter your personal details to use all site</br>futures</p>
+      <a href="signup-bage.html">
+        <button id="to-sign-up">Sign Up</button>
+      </a>
+    </div>
+  </div>
 
-  <script src="scripts/all.min.js"></script>
   <script src="scripts/login-bage.js"></script>
+  <script src="scripts/all.min.js"></script>
 </body>
 
 </html>

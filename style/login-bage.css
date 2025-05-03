@@ -1,3 +1,241 @@
-body{
-  background-color: green;
+:root{
+  --dark-color: #2B2B2B;
+  --dark-color-links: #151515;
+  --blue-color: #146EF5;
+  --gray-color: #F0F0F0;
+  --red-color: #DF0000;
+  --orange-color: #FFBE00;
+  --dark-mode-back-color: #212529;
+  --input-back-on-dark: #dfdfdf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to right , rgb(203, 194, 194) , rgb(173, 173, 248));
+}
+
+.container {
+  background-color: white;
+  position: relative;
+  height: 430px;
+  width: 700px;
+  border-radius: 30px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 15%);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .container{
+    width: 330px;
+    overflow: unset;
+  }
+}
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+.container span {
+  font-size: 12px;
+}
+
+.container a {
+  color: var(--gray-color);
+}
+
+/* start toggle menu */
+/* left */
+.toggle-menu-left {
+  background-color: var(--blue-color);
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 0 150px 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .toggle-menu-left {
+    top: 151%;
+    transform: translateY(-50%);
+    width: 100%;
+    border-radius: 30px;
+  }
+}
+
+.toggle-menu-left p {
+  font-size: 17px;
+  text-align: center;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.toggle-menu-left button {
+  position: absolute;
+  bottom: 70px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: white;
+  border-color: var(--blue-color);
+  color: var(--blue-color);
+  cursor: pointer;
+  transition: .3s;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toggle-menu-left button:hover,
+.toggle-menu-left button:focus {
+  color: black;
+}
+/* end toggle menu */
+
+/* left */
+.with-toggle-menu-left {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .with-toggle-menu-left {
+    width: 100%;
+  }
+}
+
+.with-toggle-menu-left h1 {
+  margin-bottom: 15px;
+}
+
+.with-toggle-menu-left span {
+  font-size: 15px;
+}
+
+
+.with-toggle-menu-left input {
+  margin: 10px 0px 10px;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border-color: var(--blue-color);
+}
+
+.with-toggle-menu-left button {
+  margin-top: 20px;
+  background-color: var(--blue-color);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.with-toggle-menu-left button:hover,
+.with-toggle-menu-left button:focus {
+  background-color: white;
+  color: var(--blue-color);
+  border-color: var(--blue-color);
+} 
+
+.with-toggle-menu-left .forget {
+  color: rgb(4, 4, 143);
+  text-decoration: none;
+}
+/* end with tuggle */
+
+/* dark mode and inactive */
+
+body.dark-mode{
+  background-image: linear-gradient(to right , rgb(81, 81, 81) , rgb(58, 58, 83));
+}
+
+.container.dark-mode{
+  background-color: var(--dark-mode-back-color);
+}
+
+.container.dark-mode .with-toggle-menu-left h1{
+  color: white;
+}
+
+.container.dark-mode .with-toggle-menu-left span{
+  color: white;
+}
+
+.container.dark-mode .with-toggle-menu-left .forget{
+  color: #0655cb;
+}
+
+.container.dark-mode .with-toggle-menu-left input{
+  background-color: var(--input-back-on-dark);
+}
+
+.container.dark-mode .with-toggle-menu-left button:hover,
+.container.dark-mode .with-toggle-menu-left button:focus {
+  background-color: var(--dark-mode-back-color);
+}
+
+.container.dark-mode .toggle-menu-left button{
+  background-color: var(--dark-mode-back-color);
+}
+
+.container.dark-mode .toggle-menu-left button:hover,
+.container.dark-mode .toggle-menu-left button:focus{
+  color: white;
+}
+
+/* the opposite view */
+
+.container.dark-mode .with-toggle-menu-right h1{
+  color: white;
+}
+
+.container.dark-mode .with-toggle-menu-right span{
+  color: white;
+}
+
+.container.dark-mode .with-toggle-menu-right input{
+  background-color: var(--input-back-on-dark);
+}
+
+.container.dark-mode .with-toggle-menu-right button:hover,
+.container.dark-mode .with-toggle-menu-right button:focus {
+  background-color: var(--dark-mode-back-color);
+}
+
+.container.dark-mode .toggle-menu-right button{
+  background-color: var(--dark-mode-back-color);
+}
+
+.container.dark-mode .toggle-menu-right button:hover,
+.container.dark-mode .toggle-menu-right button:focus{
+  color: white;
+}
+
+.inactive {
+  display: none;
 }
