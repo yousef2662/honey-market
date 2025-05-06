@@ -47,7 +47,8 @@
       </div>
       <div class="nav-adjuster-mobile">
         <div class="nav-logo">
-          <img src="images/logo.png" alt="market logo">
+          <img class="for-light" src="images/logo.png" alt="market logo">
+          <img class="for-dark" src="images/logo-dark.png" alt="market logo">
         </div>
       </div>
       <div class="sear-change-mobile">
@@ -61,7 +62,8 @@
     <div class="container not-mobile">
       <div class="left-section">
         <div class="nav-logo">
-          <img src="images/logo.png" alt="market logo">
+          <img class="for-light" src="images/logo.png" alt="market logo">
+          <img class="for-dark" src="images/logo-dark.png" alt="market logo">
         </div>
         <div class="change-mode light">
           <i class="fa-solid fa-sun sun-mode"></i>
@@ -92,9 +94,32 @@
     </div>
   </div>
   <!-- start landing -->
+  <div class="stars-div">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+  </div>
+
   <section class="landing" id="home">
     <div class="container">
       <div class="left-section">
+        <a href="cart.html">
+          <div class="main-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </a>
         <div class="adjuster">
           <img src="images/honey-main.png" alt="honey image" class="landing-honey">
           <img src="images/Bee.png" alt="bee image" class="landing-bee">
@@ -130,10 +155,10 @@
         <div class="slider-container">
           <i class="fa-solid fa-caret-right arrow-r"></i>
           <i class="fa-solid fa-caret-left arrow-l"></i>
-          <a href="#">
+          <a href="#products">
             <img src="images/vs-back.jpg" alt="1 kilo backage of honey">
           </a>
-          <a href="#">
+          <a href="#products">
             <div class="description">
               <h1>Clover flower honey🍯</h1>
               <p>Clover flower honey🍀<br><span class="height">it is one of our best products🐝</span><br>it is useful
@@ -162,9 +187,9 @@
         <p>Clover flower honey🍀 it is one of our best products🐝 it is useful for diabetic patients due to its low
           content of harmful carbohydrates💯</p>
         <div class="order">
-          <i class="fa-solid fa-minus"></i>
+          <i class="fa-solid fa-minus dec-amount"></i>
           <div class="amount amount-show">0</div>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus inc-amount"></i>
           <button class="add-to-cart">Add to<i class="fa-solid fa-cart-shopping"></i></button>
         </div>
       </div>
@@ -174,9 +199,9 @@
         <p>Citrus flower honey🍊 it is one of our best products🐝 it is useful for children as it promots the Immune
           system💯</p>
         <div class="order">
-          <i class="fa-solid fa-minus"></i>
+          <i class="fa-solid fa-minus dec-amount"></i>
           <div class="amount amount-show">0</div>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus inc-amount"></i>
           <button class="add-to-cart">Add to<i class="fa-solid fa-cart-shopping"></i></button>
         </div>
       </div>
@@ -186,9 +211,9 @@
         <p>bees wax 🍯 it is one of our best products🐝 it is useful for all people as its waxy consistency that make it
           delicious💯</p>
         <div class="order">
-          <i class="fa-solid fa-minus"></i>
+          <i class="fa-solid fa-minus dec-amount"></i>
           <div class="amount amount-show">0</div>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus inc-amount"></i>
           <button class="add-to-cart">Add to<i class="fa-solid fa-cart-shopping"></i></button>
         </div>
       </div>
@@ -228,8 +253,8 @@
     </div>
   </a>
 
-  <script src="scripts/all.min.js"></script>
   <script src="scripts/main.js"></script>
+  <script src="scripts/all.min.js"></script>
 </body>
 
 </html>
