@@ -194,6 +194,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   let cartAmou = document.querySelector(".main-cart span");
 
   cartAmou.innerHTML = JSON.parse(localStorage.getItem("current-cart"));
+  if (cartAmou.innerHTML === "") {
+    cartAmou.innerHTML = 0;
+  }
+
 
   if (cartAmou.innerHTML === "0") {
     amountShow[0].innerHTML = 0;
