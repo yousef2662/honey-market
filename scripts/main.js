@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+
 // start dark mode fun
 window.changeToMoon = function () {
   document.body.classList.add("dark-mode");
@@ -181,11 +183,88 @@ window.onscroll = function () {
 
 };
 
+document.addEventListener("DOMContentLoaded", async function () {
+  // تأكد من أن مكتبة FontAwesome قد أنهت التحويل
+  await FontAwesome.dom.i2svg();
+  // الآن يمكنك التفاعل مع عنصر SVG بدلاً من i
+  let amountShow = document.querySelectorAll(".amount-show");
+  let decAmount = document.querySelectorAll(".dec-amount");
+  let incAmount = document.querySelectorAll(".inc-amount");
+  let addToCart = document.querySelectorAll(".add-to-cart");
+  let cartAmou = document.querySelector(".main-cart span");
+
+  cartAmou.innerHTML = JSON.parse(localStorage.getItem("current-cart"));
+
+  if (cartAmou.innerHTML === "0") {
+    amountShow[0].innerHTML = 0;
+    amountShow[1].innerHTML = 0;
+    amountShow[2].innerHTML = 0;
+  } else {
+    amountShow[0].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh1"));
+    amountShow[1].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh2"));
+    amountShow[2].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh3"));
+  }
+
+
+  incAmount.forEach((e) => {
+    e.addEventListener("click", () => {
+      let index = e.getAttribute("data-index");
+      if (index === "1") {
+        amountShow[0].innerHTML = parseInt(amountShow[0].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      } if (index === "2") {
+        amountShow[1].innerHTML = parseInt(amountShow[1].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      } if (index === "3") {
+        amountShow[2].innerHTML = parseInt(amountShow[2].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      }
+
+      let amountShowCont1 = amountShow[0].innerHTML;
+      let amountShowCont2 = amountShow[1].innerHTML;
+      let amountShowCont3 = amountShow[2].innerHTML;
+      let currentAmou = cartAmou.innerHTML;
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+      localStorage.setItem("current-amou-sh1", JSON.stringify(amountShowCont1));
+      localStorage.setItem("current-amou-sh2", JSON.stringify(amountShowCont2));
+      localStorage.setItem("current-amou-sh3", JSON.stringify(amountShowCont3));
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+    })
+  })
+
+  decAmount.forEach((e) => {
+    e.addEventListener("click", () => {
+      let index = e.getAttribute("data-index");
+      if (index === "1") {
+        if (amountShow[0].innerHTML > 0) {
+          amountShow[0].innerHTML = parseInt(amountShow[0].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      } if (index === "2") {
+        if (amountShow[1].innerHTML > 0) {
+          amountShow[1].innerHTML = parseInt(amountShow[1].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      } if (index === "3") {
+        if (amountShow[2].innerHTML > 0) {
+          amountShow[2].innerHTML = parseInt(amountShow[2].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      }
+
+
+      let amountShowCont1 = amountShow[0].innerHTML;
+      let amountShowCont2 = amountShow[1].innerHTML;
+      let amountShowCont3 = amountShow[2].innerHTML;
+      let currentAmou = cartAmou.innerHTML;
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+      localStorage.setItem("current-amou-sh1", JSON.stringify(amountShowCont1));
+      localStorage.setItem("current-amou-sh2", JSON.stringify(amountShowCont2));
+      localStorage.setItem("current-amou-sh3", JSON.stringify(amountShowCont3));
+    })
+  })
+
+});
 
 // pro-card funcitions
-
-let amountShow = document.querySelectorAll(".amount-show");
-let decAmount = document.querySelectorAll(".dec-amount");
-let incAmount = document.querySelectorAll(".inc-amount");
-let AddToCart = document.querySelectorAll(".add-to-cart");
 
