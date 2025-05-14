@@ -1721,6 +1721,24 @@ footer .social-links::after{
   color: var(--dark-color-links);
 }
 
+.pro-card .price{
+  position: absolute;
+  left: 13px;
+  font-size: 17px;
+  font-weight: 800;
+  color: rgb(200, 59, 12);
+}
+
+.pro-card .discount{
+  width: 50px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  color: white;
+  text-align: center;
+}
 
 /* dark mode */
 

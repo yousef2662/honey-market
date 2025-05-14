@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const changeModeDiv = document.querySelectorAll(".change-mode");
 
   // Apply correct mode when page fully loads
@@ -48,8 +49,12 @@ window.changeToMoon = function () {
 
   if (sun) sun[0].style.transform = "scale(.84)";
   if (sun) sun[1].style.transform = "scale(.84)";
-  if (sun) moon[0].style.transform = "scale(1)";
+  if (sun) moon[1].classList.remove("inactiveM");
+  if (sun) moon[0].classList.remove("inactiveM");
+  if (sun) sun[0].classList.add("inactiveS");
+  if (sun) sun[1].classList.add("inactiveS");
   if (sun) moon[1].style.transform = "scale(1)";
+  if (sun) moon[0].style.transform = "scale(1)";
   if (sun) sun[0].style.backgroundColor = "transparent";
   if (sun) sun[1].style.backgroundColor = "transparent";
   if (sun) moon[0].style.backgroundColor = "white";
@@ -88,8 +93,12 @@ window.changeToSun = function () {
 
   if (moon) moon[0].style.transform = "scale(.84)";
   if (moon) moon[1].style.transform = "scale(.84)";
+  if (moon) moon[0].classList.add("inactiveM");
+  if (moon) moon[1].classList.add("inactiveM");
   if (moon) sun[0].style.transform = "scale(1)";
   if (moon) sun[1].style.transform = "scale(1)";
+  if (moon) sun[0].classList.remove("inactiveS");
+  if (moon) sun[1].classList.remove("inactiveS");
   if (moon) moon[0].style.backgroundColor = "transparent";
   if (moon) moon[1].style.backgroundColor = "transparent";
   if (moon) sun[0].style.backgroundColor = "white";
@@ -190,8 +199,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   let amountShow = document.querySelectorAll(".amount-show");
   let decAmount = document.querySelectorAll(".dec-amount");
   let incAmount = document.querySelectorAll(".inc-amount");
-  let addToCart = document.querySelectorAll(".add-to-cart");
   let cartAmou = document.querySelector(".main-cart span");
+  let prices = document.querySelectorAll(".pro-card .price");
 
   cartAmou.innerHTML = JSON.parse(localStorage.getItem("current-cart"));
   if (cartAmou.innerHTML === "") {

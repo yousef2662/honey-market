@@ -11,94 +11,157 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h2>مناحل أبو يوسف</h2>
-      <i class="fa-solid fa-cart-shopping"><span>0</span></i>
+
+  <div class="on-searching">
+    <div class="on-sear-container">
+      <h1>search in web products..</h1>
+      <input type="text" placeholder="search">
+      <button>search</button>
     </div>
-  </header>
-  <section>
-    <div class="container">
-      <div class="added-container">
-        <div class="added-products">
-          <img src="images/vs-back.jpg">
-          <div class="descrip-and-amount">
-            <h1>Clover flower honey🍀</h1>
-            <p>🐝it is useful for diabetic patients due to its low ...💯</p>
-            <span>متوفر</span>
-            <p>النوع: برسيم</p>
-            <div class="amount-control">
-              <i class="fa-solid fa-plus"></i>
-              <div class="amount">0</div>
-              <i class="fa-solid fa-minus"></i>
-              <a href="#"><span>حذف</span></a>
-              <a href="#"><span>حفظ لوقت لاحق</span></a>
-              <a href="#"><span>مشاركه</span></a>
-            </div>
+  </div>
+  <div class="nav-bar">
+    <div class="container for-mobile">
+      <div class="toggler-adjuster">
+        <i class="fas fa-bars toggler" onclick="showTogCon();"></i>
+        <div class="toggler-container inactive">
+          <div class="toggler-con-adjuster">
+            <a href="login-bage.html" class="login">
+              <button><span>Log</span>in
+                <div class="circle-large">
+                  <div class="circle-mid">
+                    <div class="circle-small"></div>
+                  </div>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </button>
+            </a>
+            <a href="signup-bage.html" class="signup">
+              <button>Sign up
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              </button>
+            </a>
           </div>
-          <h2 class="price"><span class="discount">خصم 20%</span><span>150جنيه</span></h2>
-        </div>
-        <div class="added-products">
-          <img src="images/vs-back.jpg">
-          <div class="descrip-and-amount">
-            <h1>Citrus flower honey🍊</h1>
-            <p>🐝it is useful for children as it promotes the Immune ...💯</p>
-            <span>متوفر</span>
-            <p>النوع: موالح</p>
-            <div class="amount-control">
-              <i class="fa-solid fa-plus"></i>
-              <div class="amount">0</div>
-              <i class="fa-solid fa-minus"></i>
-              <a href="#"><span>حذف</span></a>
-              <a href="#" class="save-for"><span>حفظ لوقت لاحق</span></a>
-              <a href="#"><span>مشاركه</span></a>
-            </div>
-          </div>
-          <h2 class="price"><span class="discount">خصم 20%</span><span>150جنيه</span></h2>
-        </div>
-        <div class="added-products">
-          <img src="images/vs-back.jpg">
-          <div class="descrip-and-amount">
-            <h1>Bees wax<img src="images/beeswax.png" alt="icon for bee wax"></h1>
-            <p>🐝it is useful for all people as its waxy consistency ...💯</p>
-            <span></span>
-            <p></p>
-            <div class="amount-control">
-              <i class="fa-solid fa-plus"></i>
-              <div class="amount">0</div>
-              <i class="fa-solid fa-minus"></i>
-              <a href="#"><span>حذف</span></a>
-              <a href="#"><span>حفظ لوقت لاحق</span></a>
-              <a href="#"><span>مشاركه</span></a>
-            </div>
-          </div>
-          <h2 class="price"><span class="discount">خصم 20%</span><span>150جنيه</span></h2>
-        </div>
-        <div class="added-products">
-          <img src="images/vs-back.jpg">
-          <div class="descrip-and-amount">
-            <h3></h3>
-            <span></span>
-            <p></p>
-            <div class="amount-control">
-              <i class="fa-solid fa-plus"></i>
-              <div class="amount">0</div>
-              <i class="fa-solid fa-minus"></i>
-              <a href="#"><span>حذف</span></a>
-              <a href="#"><span>حفظ لوقت لاحق</span></a>
-              <a href="#"><span>مشاركه</span></a>
-            </div>
-          </div>
-          <h2 class="price"><span class="discount">خصم 20%</span><span>150جنيه</span></h2>
         </div>
       </div>
-      <div class="final-cost">
-        <h2 class="total">الإجمالي (5 من السلع): 750 جنيه</h2>
-        <button class="continue">تابع عملية الشراء</button>
+      <div class="nav-adjuster-mobile">
+        <div class="nav-logo">
+          <img class="for-light" src="images/logo.png" alt="market logo">
+          <img class="for-dark" src="images/logo-dark.png" alt="market logo">
+        </div>
+      </div>
+      <div class="sear-change-mobile">
+        <i class="fa-solid fa-magnifying-glass search" onclick="searchContain();"></i>
+        <div class="change-mode light">
+          <i class="fa-solid fa-sun sun-mode"></i>
+          <i class="fa-solid fa-moon moon-mode inactiveM"></i>
+        </div>
+      </div>
+    </div>
+    <div class="container not-mobile">
+      <div class="left-section">
+        <div class="nav-logo">
+          <img class="for-light" src="images/logo.png" alt="market logo">
+          <img class="for-dark" src="images/logo-dark.png" alt="market logo">
+        </div>
+        <div class="change-mode light">
+          <i class="fa-solid fa-sun sun-mode"></i>
+          <i class="fa-solid fa-moon moon-mode inactiveM"></i>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="hider"></div>
+        <h1>search in web</h1>
+        <i class="fa-solid fa-magnifying-glass search" onmouseover="toVisi();" onmouseleave="toNonVisi();"
+          onclick="searchContain();"></i>
+        <a href="login-bage.html" class="login">
+          <button><span>Log</span>in
+            <div class="circle-large">
+              <div class="circle-mid">
+                <div class="circle-small"></div>
+              </div>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </button>
+        </a>
+        <a href="signup-bage.html" class="signup">
+          <button>Sign up
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <section class="cart-landing" id="home">
+    <a href="cart.html">
+      <div class="main-cart">
+        <span>0</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </a>
+    <div class="container">
+      <div class="left-section">
+        <h1>Total: <span class="total-amou">0 products</span> <br> price: <span class="total-price">0 USD</span></h1>
+        <a href="#" class="go-final-pay">
+          <button>go to pay</button>
+        </a>
+      </div>
+      <div class="right-section">
+        <div class="empty">Empty cart</div>
+        <div class="pro-card">
+          <div class="discount">10%</div>
+          <img src="images/vs-back.jpg">
+          <div class="left">
+            <h1>Clover flower honey🍀</h1>
+            <p>Clover flower honey🍀 it is one of our best products🐝 it is useful for diabetic patients due to its low
+              content of harmful carbohydrates💯</p>
+            <div class="order">
+              <div class="price">4 USD</div>
+              <i class="fa-solid fa-minus dec-amount" data-index="1"></i>
+              <div class="amount amount-show">0</div>
+              <i class="fa-solid fa-plus inc-amount" data-index="1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="pro-card">
+          <img src="images/vs-back.jpg">
+          <div class="left">
+            <h1>Citrus flower honey🍊</h1>
+            <p>Citrus flower honey🍊 it is one of our best products🐝 it is useful for children as it promotes the
+              Immune
+              system💯</p>
+            <div class="order">
+              <div class="price">4 USD</div>
+              <i class="fa-solid fa-minus dec-amount" data-index="2"></i>
+              <div class="amount amount-show">0</div>
+              <i class="fa-solid fa-plus inc-amount" data-index="2"></i>
+            </div>
+          </div>
+        </div>
+        <div class="pro-card">
+          <div class="discount">20%</div>
+          <img src="images/vs-back.jpg">
+          <div class="left">
+            <h1>Bees wax<img src="images/beeswax.png" alt="icon for bee wax"></h1>
+            <p>bees wax 🍯 it is one of our best products🐝 it is useful for all people as its waxy consistency that
+              make
+              it
+              delicious💯</p>
+            <div class="order">
+              <div class="price">4 USD</div>
+              <i class="fa-solid fa-minus dec-amount" data-index="3"></i>
+              <div class="amount amount-show">0</div>
+              <i class="fa-solid fa-plus inc-amount" data-index="3"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
+  <a href="#home">
+    <div class="go-up">
+      <i class="fa-solid fa-angle-up"></i>
+    </div>
+  </a>
   <script src="scripts/all.min.js"></script>
   <script src="scripts/cart.js"></script>
 </body>
