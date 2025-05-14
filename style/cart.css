@@ -464,7 +464,17 @@ body .toggler-container .toggler-con-adjuster .login button{
   align-items: center;
   flex-direction: column;
   margin-right: 70px;
-  border-bottom: 2px solid var(--gold-brown-color);
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.cart-landing .left-section::after{
+  content: "";
+  width: 350px;
+  height: 2px;
+  background-color: var(--gold-brown-color);
+  position: absolute;
+  bottom: 0px;
 }
 
 .cart-landing .left-section h1{
@@ -646,6 +656,38 @@ body .toggler-container .toggler-con-adjuster .login button{
   font-weight: 700;
   color: #da461d;
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .cart-landing .container{
+    flex-direction: column;
+  }
+
+  .cart-landing .right-section{
+    width: 100%;
+  }
+
+  .cart-landing .left-section{
+    width: 100%;
+  }
+
+  .cart-landing .right-section .pro-card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: var(--gold-brown-color);
+    color: var(--oliver-color);
+    transition: .3s;
+    border-radius: .75rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 16px;
+    position: relative;
+    user-select: none;
+    z-index: 120;
+  }
 }
 
 /* ___________________________________________ */
