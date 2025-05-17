@@ -1,0 +1,80 @@
+:root{
+  --sun-color: #FDE047;
+  --moon-color: #334155;
+  --inactive-color-forMoon: #FEF9C3;
+  --inactive-color-forSun: #94A3B8;
+  --gold-color: #F6C453;
+  --gold-brown-color: #C97B32;
+  --oliver-color: #7A9E7E;
+  --blue-color: #146EF5;
+  --gray-color: #F0F0F0;
+  --dark-color-links: #151515;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  position: relative;
+  height: 100vh;
+}
+
+.container{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: flex-start;
+  gap: 40px;
+  text-align: center;
+}
+
+.pay{
+  color: var(--gold-brown-color);
+
+}
+
+.pay .spa{
+  color: var(--gold-color);
+}
+
+.pay .the-pay-number{
+  color: var(--oliver-color);
+}
+
+.number{
+  color: var(--gold-brown-color);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.number span{
+  color: var(--oliver-color);
+}
+
+.vc{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vc img{
+  height: 300px;
+}
+
+@media (max-width: 640px) {
+  .container{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

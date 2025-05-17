@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   let totalPriceIn = parseInt(prices[0].innerHTML) * parseInt(amountShow[0].innerHTML) + parseInt(prices[1].innerHTML) * parseInt(amountShow[1].innerHTML) + parseInt(prices[2].innerHTML) * parseInt(amountShow[2].innerHTML);
 
   totalPrice.innerHTML = `${totalPriceIn} USD`
+  localStorage.setItem("total-price", JSON.stringify(totalPrice.innerHTML));
 
   if (amountShow[0].innerHTML === "0") {
     proCards[0].style.display = "none";
@@ -262,6 +263,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       let totalPriceIn = parseInt(prices[0].innerHTML) * parseInt(amountShow[0].innerHTML) + parseInt(prices[1].innerHTML) * parseInt(amountShow[1].innerHTML) + parseInt(prices[2].innerHTML) * parseInt(amountShow[2].innerHTML);
       totalPrice.innerHTML = `${totalPriceIn} USD`
+      localStorage.setItem("total-price", JSON.stringify(totalPrice.innerHTML));
     })
   })
 
@@ -302,6 +304,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       let totalPriceIn = parseInt(prices[0].innerHTML) * parseInt(amountShow[0].innerHTML) + parseInt(prices[1].innerHTML) * parseInt(amountShow[1].innerHTML) + parseInt(prices[2].innerHTML) * parseInt(amountShow[2].innerHTML);
       totalPrice.innerHTML = `${totalPriceIn} USD`
+      localStorage.setItem("total-price", JSON.stringify(totalPrice.innerHTML));
     })
   })
 
