@@ -1,14 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const changeModeDiv = document.querySelectorAll(".change-mode");
-
-  // Apply correct mode when page fully loads
+window.onload = () => {
   let currentTheme = localStorage.getItem("theme");
   if (currentTheme === "dark") {
     window.changeToMoon();
   } else {
     window.changeToSun();
   }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const changeModeDiv = document.querySelectorAll(".change-mode");
+
+  // Apply correct mode when page fully loads
+
 
   // Handle toggle on click
   if (changeModeDiv) {
@@ -201,6 +205,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   let incAmount = document.querySelectorAll(".inc-amount");
   let cartAmou = document.querySelector(".main-cart span");
   let prices = document.querySelectorAll(".pro-card .price");
+  let cardTitles = document.querySelectorAll(".pro-card h1");
+
+  localStorage.setItem("cart-title1", JSON.stringify(cardTitles[0].innerHTML));
+  localStorage.setItem("cart-title2", JSON.stringify(cardTitles[1].innerHTML));
+  localStorage.setItem("cart-title3", JSON.stringify(cardTitles[2].innerHTML));
 
   cartAmou.innerHTML = JSON.parse(localStorage.getItem("current-cart"));
   if (cartAmou.innerHTML === "") {
@@ -279,5 +288,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 
-// pro-card funcitions
+
+let onSearInput = document.querySelector(".on-sear-container input");
+let onSearBtn = document.querySelector(".on-sear-container button");
+
+onSearBtn.addEventListener("click", () => {
+  let searchWorld = onSearInput.value;
+  localStorage.setItem("search-world", JSON.stringify(searchWorld));
+  window.location.href = "search-bage.html";
+});
 

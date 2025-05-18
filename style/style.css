@@ -1606,6 +1606,8 @@ body.dark-mode .stars-div svg:nth-child(15){
   }
 }
 
+/* ________________________________________________ */
+
 footer{
   width: 100%;
   min-height: 300px;
@@ -1685,7 +1687,7 @@ footer .social-links::after{
   }
 }
 
-
+/* ____________________________________________ */
 
 .go-up{
   position: fixed;

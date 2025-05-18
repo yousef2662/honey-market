@@ -78,3 +78,9 @@ body{
     margin-left: auto;
   }
 }
+
+/* ________________________________________ */
+
+body.dark-mode{
+  background-color: black;
+}
