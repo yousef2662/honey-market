@@ -9,7 +9,7 @@ window.onload = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const changeModeDiv = document.querySelectorAll(".change-mode");
-
+  localStorage.setItem("reqFor", "no");
   // Apply correct mode when page fully loads
 
   // Handle toggle on click
@@ -42,11 +42,6 @@ window.changeToMoon = function () {
   let moon = document.querySelectorAll(".moon-mode");
   let changeMode = document.querySelectorAll(".change-mode");
   let navbar = document.querySelector(".nav-bar");
-  let landing = document.querySelector(".landing");
-  let services = document.querySelector(".services");
-  let products = document.querySelector(".products");
-  let contact = document.querySelector(".Contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
   let goUp = document.querySelector(".go-up");
 
   if (sun) sun[0].style.transform = "scale(.84)";
@@ -66,11 +61,6 @@ window.changeToMoon = function () {
 
   if (navbar) navbar.classList.add("dark-mode");
   if (navbar) navbar.style.backgroundColor = "transparent";
-  if (landing) landing.classList.add("dark-mode");
-  if (services) services.classList.add("dark-mode");
-  if (products) products.classList.add("dark-mode");
-  if (contact) contact.classList.add("dark-mode");
-  if (textOnLanding) textOnLanding.classList.remove("text-black-50");
   if (goUp) goUp.classList.add("dark-mode");
 
   localStorage.setItem("theme", "dark");
@@ -82,11 +72,6 @@ window.changeToSun = function () {
   let moon = document.querySelectorAll(".moon-mode");
   let changeMode = document.querySelectorAll(".change-mode");
   let navbar = document.querySelector(".nav-bar");
-  let landing = document.querySelector(".landing");
-  let services = document.querySelector(".services");
-  let products = document.querySelector(".products");
-  let contact = document.querySelector(".contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
   let goUp = document.querySelector(".go-up");
 
   if (moon) moon[0].style.transform = "scale(.84)";
@@ -106,11 +91,6 @@ window.changeToSun = function () {
 
   if (navbar) navbar.classList.remove("dark-mode");
   if (navbar) navbar.style.backgroundColor = "white";
-  if (landing) landing.classList.remove("dark-mode");
-  if (services) services.classList.remove("dark-mode");
-  if (products) products.classList.remove("dark-mode");
-  if (contact) contact.classList.remove("dark-mode");
-  if (textOnLanding) textOnLanding.classList.add("text-black-50");
   if (goUp) goUp.classList.remove("dark-mode");
 
   localStorage.setItem("theme", "light");

@@ -5,6 +5,15 @@ window.onload = () => {
   } else {
     window.changeToSun();
   }
+
+  localStorage.setItem("reqFor", "no");
+
+  let navBar = document.querySelector(".nav-bar");
+  if (window.pageYOffset > 100) {
+    if (currentTheme === "dark") {
+      navBar.style.backgroundColor = "black";
+    }
+  }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         window.changeToMoon();
       }
+
+      let navBar = document.querySelector(".nav-bar");
+      if (window.pageYOffset > 100) {
+        if (currentTheme === "dark") {
+          navBar.style.backgroundColor = "black";
+        }
+      }
     });
     changeModeDiv[1].addEventListener("click", () => {
       let currentTheme = localStorage.getItem("theme");
@@ -30,6 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         window.changeToSun();
       } else {
         window.changeToMoon();
+      }
+
+      let navBar = document.querySelector(".nav-bar");
+      if (window.pageYOffset > 100) {
+        if (currentTheme === "light") {
+          navBar.style.backgroundColor = "black";
+        }
       }
     });
   }
@@ -48,7 +71,6 @@ window.changeToMoon = function () {
   let services = document.querySelector(".services");
   let products = document.querySelector(".products");
   let contact = document.querySelector(".Contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
   let goUp = document.querySelector(".go-up");
 
   if (sun) sun[0].style.transform = "scale(.84)";
@@ -76,7 +98,6 @@ window.changeToMoon = function () {
   if (services) services.classList.add("dark-mode");
   if (products) products.classList.add("dark-mode");
   if (contact) contact.classList.add("dark-mode");
-  if (textOnLanding) textOnLanding.classList.remove("text-black-50");
   if (goUp) goUp.classList.add("dark-mode");
 
   localStorage.setItem("theme", "dark");
@@ -92,7 +113,6 @@ window.changeToSun = function () {
   let services = document.querySelector(".services");
   let products = document.querySelector(".products");
   let contact = document.querySelector(".contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
   let goUp = document.querySelector(".go-up");
 
   if (moon) moon[0].style.transform = "scale(.84)";
@@ -120,7 +140,6 @@ window.changeToSun = function () {
   if (services) services.classList.remove("dark-mode");
   if (products) products.classList.remove("dark-mode");
   if (contact) contact.classList.remove("dark-mode");
-  if (textOnLanding) textOnLanding.classList.add("text-black-50");
   if (goUp) goUp.classList.remove("dark-mode");
 
   localStorage.setItem("theme", "light");

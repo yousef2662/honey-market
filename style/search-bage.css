@@ -184,7 +184,7 @@ body .on-searching{
   height: 100vh;
   width: 100%;
   background-color: #f3f3f35e;
-  z-index: 300;
+  z-index: 500;
   justify-content: center;
   align-items: center;
   display: none;
@@ -561,6 +561,47 @@ body .toggler-container .toggler-con-adjuster .login button{
   font-size: 17px;
   font-weight: 800;
   color: rgb(255, 0, 0);
+}
+
+.no-result{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-align: center;
+  color: red;
+  display: none;
+}
+
+.container .main-cart{
+  position: fixed;
+  top: 30%;
+  left: 0px;
+  background-color: #a52020;
+  padding: 2px 3px 2px 40px;
+  border-top-right-radius: .75rem;
+  border-bottom-right-radius: .75rem;
+  z-index: 400;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.container .main-cart svg{
+  background-color: white;
+  color: #a52020;
+  padding: 15px 11.5px 8px 11.5px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.container .main-cart span{
+  position: absolute;
+  top: 3px;
+  right: 19px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #a52020;
 }
 
 /* _______________________________________________ */

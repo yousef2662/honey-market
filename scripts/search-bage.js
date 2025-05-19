@@ -42,12 +42,6 @@ window.changeToMoon = function () {
   let moon = document.querySelectorAll(".moon-mode");
   let changeMode = document.querySelectorAll(".change-mode");
   let navbar = document.querySelector(".nav-bar");
-  let landing = document.querySelector(".landing");
-  let services = document.querySelector(".services");
-  let products = document.querySelector(".products");
-  let contact = document.querySelector(".Contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
-  let goUp = document.querySelector(".go-up");
 
   if (sun) sun[0].style.transform = "scale(.84)";
   if (sun) sun[1].style.transform = "scale(.84)";
@@ -66,12 +60,6 @@ window.changeToMoon = function () {
 
   if (navbar) navbar.classList.add("dark-mode");
   if (navbar) navbar.style.backgroundColor = "transparent";
-  if (landing) landing.classList.add("dark-mode");
-  if (services) services.classList.add("dark-mode");
-  if (products) products.classList.add("dark-mode");
-  if (contact) contact.classList.add("dark-mode");
-  if (textOnLanding) textOnLanding.classList.remove("text-black-50");
-  if (goUp) goUp.classList.add("dark-mode");
 
   localStorage.setItem("theme", "dark");
 };
@@ -82,12 +70,6 @@ window.changeToSun = function () {
   let moon = document.querySelectorAll(".moon-mode");
   let changeMode = document.querySelectorAll(".change-mode");
   let navbar = document.querySelector(".nav-bar");
-  let landing = document.querySelector(".landing");
-  let services = document.querySelector(".services");
-  let products = document.querySelector(".products");
-  let contact = document.querySelector(".contact");
-  let textOnLanding = document.querySelector(".text-on-landing");
-  let goUp = document.querySelector(".go-up");
 
   if (moon) moon[0].style.transform = "scale(.84)";
   if (moon) moon[1].style.transform = "scale(.84)";
@@ -106,12 +88,6 @@ window.changeToSun = function () {
 
   if (navbar) navbar.classList.remove("dark-mode");
   if (navbar) navbar.style.backgroundColor = "white";
-  if (landing) landing.classList.remove("dark-mode");
-  if (services) services.classList.remove("dark-mode");
-  if (products) products.classList.remove("dark-mode");
-  if (contact) contact.classList.remove("dark-mode");
-  if (textOnLanding) textOnLanding.classList.add("text-black-50");
-  if (goUp) goUp.classList.remove("dark-mode");
 
   localStorage.setItem("theme", "light");
 };
@@ -192,6 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let cartTitle3 = JSON.parse(localStorage.getItem("cart-title3"));
   let searchWorld = JSON.parse(localStorage.getItem("search-world"));
   let cards = document.querySelectorAll(".container .pro-card")
+  let noResult = document.querySelector(".no-result")
 
   let cartTitle1Arr = [];
   let cartTitle2Arr = [];
@@ -206,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   for (i = 0; i < searchWorld.length; i++) {
-    cartTitle3Arr.push(cartTitle3[i])
+    cartTitle3Arr.push(cartTitle3[i + 5])
   }
 
 
@@ -222,5 +199,110 @@ document.addEventListener("DOMContentLoaded", () => {
   if (searchWorld.toLowerCase() === cartTitle3Arr.join("").toLowerCase()) {
     cards[2].style.display = "flex";
   }
+
+  if (searchWorld.toLowerCase() !== cartTitle3Arr.join("").toLowerCase() && searchWorld.toLowerCase() !== cartTitle2Arr.join("").toLowerCase() && searchWorld.toLowerCase() !== cartTitle1Arr.join("").toLowerCase()) {
+    noResult.style.display = "block";
+  }
+
+  if (searchWorld === "") {
+    cards[0].style.display = "none";
+    cards[1].style.display = "none";
+    cards[2].style.display = "none";
+    noResult.style.display = "block";
+  }
+
+});
+
+// ______________________________________________
+
+document.addEventListener("DOMContentLoaded", async function () {
+  // تأكد من أن مكتبة FontAwesome قد أنهت التحويل
+  await FontAwesome.dom.i2svg();
+  // الآن يمكنك التفاعل مع عنصر SVG بدلاً من i
+  let amountShow = document.querySelectorAll(".amount-show");
+  let decAmount = document.querySelectorAll(".dec-amount");
+  let incAmount = document.querySelectorAll(".inc-amount");
+  let cartAmou = document.querySelector(".main-cart span");
+  let prices = document.querySelectorAll(".pro-card .price");
+  let cardTitles = document.querySelectorAll(".pro-card h1");
+
+  localStorage.setItem("cart-title1", JSON.stringify(cardTitles[0].innerHTML));
+  localStorage.setItem("cart-title2", JSON.stringify(cardTitles[1].innerHTML));
+  localStorage.setItem("cart-title3", JSON.stringify(cardTitles[2].innerHTML));
+
+  cartAmou.innerHTML = JSON.parse(localStorage.getItem("current-cart"));
+  if (cartAmou.innerHTML === "") {
+    cartAmou.innerHTML = 0;
+  }
+
+
+  if (cartAmou.innerHTML === "0") {
+    amountShow[0].innerHTML = 0;
+    amountShow[1].innerHTML = 0;
+    amountShow[2].innerHTML = 0;
+  } else {
+    amountShow[0].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh1"));
+    amountShow[1].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh2"));
+    amountShow[2].innerHTML = JSON.parse(localStorage.getItem("current-amou-sh3"));
+  }
+
+
+  incAmount.forEach((e) => {
+    e.addEventListener("click", () => {
+      let index = e.getAttribute("data-index");
+      if (index === "1") {
+        amountShow[0].innerHTML = parseInt(amountShow[0].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      } if (index === "2") {
+        amountShow[1].innerHTML = parseInt(amountShow[1].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      } if (index === "3") {
+        amountShow[2].innerHTML = parseInt(amountShow[2].innerHTML) + 1;
+        cartAmou.innerHTML = parseInt(cartAmou.innerHTML) + 1;
+      }
+
+      let amountShowCont1 = amountShow[0].innerHTML;
+      let amountShowCont2 = amountShow[1].innerHTML;
+      let amountShowCont3 = amountShow[2].innerHTML;
+      let currentAmou = cartAmou.innerHTML;
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+      localStorage.setItem("current-amou-sh1", JSON.stringify(amountShowCont1));
+      localStorage.setItem("current-amou-sh2", JSON.stringify(amountShowCont2));
+      localStorage.setItem("current-amou-sh3", JSON.stringify(amountShowCont3));
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+    })
+  })
+
+  decAmount.forEach((e) => {
+    e.addEventListener("click", () => {
+      let index = e.getAttribute("data-index");
+      if (index === "1") {
+        if (amountShow[0].innerHTML > 0) {
+          amountShow[0].innerHTML = parseInt(amountShow[0].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      } if (index === "2") {
+        if (amountShow[1].innerHTML > 0) {
+          amountShow[1].innerHTML = parseInt(amountShow[1].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      } if (index === "3") {
+        if (amountShow[2].innerHTML > 0) {
+          amountShow[2].innerHTML = parseInt(amountShow[2].innerHTML) - 1;
+          cartAmou.innerHTML = parseInt(cartAmou.innerHTML) - 1;
+        }
+      }
+
+
+      let amountShowCont1 = amountShow[0].innerHTML;
+      let amountShowCont2 = amountShow[1].innerHTML;
+      let amountShowCont3 = amountShow[2].innerHTML;
+      let currentAmou = cartAmou.innerHTML;
+      localStorage.setItem("current-cart", JSON.stringify(currentAmou));
+      localStorage.setItem("current-amou-sh1", JSON.stringify(amountShowCont1));
+      localStorage.setItem("current-amou-sh2", JSON.stringify(amountShowCont2));
+      localStorage.setItem("current-amou-sh3", JSON.stringify(amountShowCont3));
+    })
+  })
 
 });
