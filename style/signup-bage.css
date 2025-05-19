@@ -1,10 +1,14 @@
 :root{
-  --dark-color: #2B2B2B;
-  --dark-color-links: #151515;
+  --sun-color: #FDE047;
+  --moon-color: #334155;
+  --inactive-color-forMoon: #FEF9C3;
+  --inactive-color-forSun: #94A3B8;
+  --gold-color: #F6C453;
+  --gold-brown-color: #C97B32;
+  --oliver-color-saturated: #599660;
   --blue-color: #146EF5;
   --gray-color: #F0F0F0;
-  --red-color: #DF0000;
-  --orange-color: #FFBE00;
+  --dark-color-links: #151515;
   --dark-mode-back-color: #212529;
   --input-back-on-dark: #dfdfdf;
 }
@@ -20,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(to right , rgb(203, 194, 194) , rgb(173, 173, 248));
+  background-image: linear-gradient(to right , #599660 , #C97B32);
 }
 
 .container {
@@ -59,7 +63,7 @@ body {
 
 /* right */
 .toggle-menu-right {
-  background-color: var(--blue-color);
+  background-color: var(--oliver-color-saturated);
   width: 50%;
   position: absolute;
   top: 0;
@@ -94,8 +98,8 @@ body {
   padding: 10px 15px;
   border-radius: 10px;
   background-color: white;
-  border-color: var(--blue-color);
-  color: var(--blue-color);
+  border: none;
+  color: var(--oliver-color-saturated);
   cursor: pointer;
   transition: 0.3s;
   left: 50%;
@@ -141,12 +145,13 @@ body {
   padding: 10px;
   border-radius: 10px;
   outline: none;
-  border-color: var(--blue-color);
+  border: 2px solid var(--oliver-color-saturated);
 }
 
 .with-toggle-menu-right button {
   margin-top: 20px;
-  background-color: var(--blue-color);
+  background-color: var(--oliver-color-saturated);
+  border: 2px solid transparent;
   color: white;
   padding: 10px 15px;
   border-radius: 10px;
@@ -158,51 +163,19 @@ body {
 .with-toggle-menu-right button:hover,
 .with-toggle-menu-right button:focus {
   background-color: white;
-  color: var(--blue-color);
-  border-color: var(--blue-color);
+  color: var(--oliver-color-saturated);
+  border: 2px solid var(--oliver-color-saturated);
 } 
 
 /* dark mode and inactive */
 
 body.dark-mode{
-  background-image: linear-gradient(to right , rgb(81, 81, 81) , rgb(58, 58, 83));
+  background-image: linear-gradient(to right , #27412a , rgb(23, 23, 23));
 }
 
 .container.dark-mode{
   background-color: var(--dark-mode-back-color);
 }
-
-.container.dark-mode .with-toggle-menu-left h1{
-  color: white;
-}
-
-.container.dark-mode .with-toggle-menu-left span{
-  color: white;
-}
-
-.container.dark-mode .with-toggle-menu-left .forget{
-  color: #0655cb;
-}
-
-.container.dark-mode .with-toggle-menu-left input{
-  background-color: var(--input-back-on-dark);
-}
-
-.container.dark-mode .with-toggle-menu-left button:hover,
-.container.dark-mode .with-toggle-menu-left button:focus {
-  background-color: var(--dark-mode-back-color);
-}
-
-.container.dark-mode .toggle-menu-left button{
-  background-color: var(--dark-mode-back-color);
-}
-
-.container.dark-mode .toggle-menu-left button:hover,
-.container.dark-mode .toggle-menu-left button:focus{
-  color: white;
-}
-
-/* the opposite view */
 
 .container.dark-mode .with-toggle-menu-right h1{
   color: white;
@@ -213,7 +186,8 @@ body.dark-mode{
 }
 
 .container.dark-mode .with-toggle-menu-right input{
-  background-color: var(--input-back-on-dark);
+  background-color: transparent;
+  color: white;
 }
 
 .container.dark-mode .with-toggle-menu-right button:hover,

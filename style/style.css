@@ -601,13 +601,16 @@ body.dark-mode .stars-div svg:nth-child(15){
 
 @media (max-width: 1024px) {
   .landing{
-    height: 150vh;
+    height: unset;
   }
   .landing .container {
     flex-direction: column-reverse;
   }
   .landing .left-section,.right-section{
     width: 100%;
+  }
+  .landing .left-section{
+    height: 500px;
   }
 
 }
@@ -714,15 +717,15 @@ body.dark-mode .stars-div svg:nth-child(15){
 }
 
 .landing .right-section h1{
-  font-size: 100px;
-  font-weight: 300;
-  font-family: "Anton", sans-serif;
+  font-size: 90px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
   text-align: center;
   min-width: 77%;
 }
 
 .landing .right-section h1 span{
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   color: var(--oliver-color);
 }
@@ -840,7 +843,7 @@ body.dark-mode .stars-div svg:nth-child(15){
   top: 75%;
   cursor: pointer;
   left: 50%;
-  position: fixed;
+  position: absolute;
   transform: translate(-50%, -50%);
   z-index: 50;
 }
@@ -1254,6 +1257,9 @@ body.dark-mode .stars-div svg:nth-child(15){
 }
 
 @media (max-width: 1024px) {
+  .services{
+    height: unset;
+  }
   .services .container {
     flex-direction: column-reverse;
   }
