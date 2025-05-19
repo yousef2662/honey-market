@@ -52,6 +52,7 @@ let egcon = document.querySelector(".egcon");
 let egconH3 = document.querySelectorAll(".egcon h3");
 let ol = document.querySelectorAll(".ol");
 let rfBtn = document.querySelector(".rfBtn");
+let erd = document.querySelector(".erd");
 
 
 egconH3.forEach((e) => {
@@ -124,8 +125,8 @@ reqForForm.addEventListener("click", (e) => {
 
 rfBtn.addEventListener("click", () => {
   if (egtxtIn.value !== "" && eaIn.value !== "" && enIn.value !== "") {
-    localStorage.setItem("reqFor", "ok")
+    localStorage.setItem("reqFor", "ok");
   } else {
-    localStorage.setItem("reqFor", "no")
+    localStorage.setItem("reqFor", "no");
   }
 });

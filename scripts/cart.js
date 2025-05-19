@@ -302,3 +302,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   })
 
 });
+
+
+
+let goFinalPage = document.querySelector(".go-final-pay");
+goFinalPage.addEventListener("click", () => {
+  let totalPriceInBtn = JSON.parse(localStorage.getItem("total-price"));
+  if (totalPriceInBtn !== "0 USD") {
+    location.href = "final-page.html";
+  }
+});
