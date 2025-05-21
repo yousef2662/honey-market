@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let navBar = document.querySelector(".nav-bar");
       if (window.pageYOffset > 100) {
-        if (currentTheme === "dark") {
+        if (currentTheme === "light") {
           navBar.style.backgroundColor = "black";
         }
       }

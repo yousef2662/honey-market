@@ -107,7 +107,7 @@ body .required-form form{
 
 .egf{
   width: 300px;
-  height: 35px;
+  height: 45px;
   background-color: transparent;
   border: 1px solid var(--oliver-color);
   border-radius: .15rem;
@@ -124,7 +124,7 @@ body .required-form form{
   content: "";
   position: absolute;
   width: 2px;
-  height: 70%;
+  height: 60%;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -148,7 +148,7 @@ body .required-form form{
 }
 
 .egtxt h3{
-  line-height: 2.3;
+  line-height: 2.9;
   font-size: 15px;
   margin-left: 7px;
   color: rgb(194, 194, 194);
@@ -178,14 +178,14 @@ body .required-form form{
 
 .eaf{
   width: 300px;
-  height: 35px;
+  height: 45px;
   background-color: transparent;
   border-bottom: 1px solid var(--oliver-color);
   position: relative;
 }
 
 .eah3 {
-  line-height: 2.3;
+  line-height: 2.9;
   font-size: 15px;
   margin-left: 7px;
   color: rgb(194, 194, 194);
@@ -210,14 +210,14 @@ body .required-form form{
 
 .enf{
   width: 300px;
-  height: 35px;
+  height: 45px;
   background-color: transparent;
   border-bottom: 1px solid var(--oliver-color);
   position: relative;
 }
 
 .enh3 {
-  line-height: 2.3;
+  line-height: 2.9;
   font-size: 15px;
   margin-left: 7px;
   color: rgb(194, 194, 194);

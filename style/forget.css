@@ -1,10 +1,14 @@
 :root{
-  --dark-color: #2B2B2B;
-  --dark-color-links: #151515;
+  --sun-color: #FDE047;
+  --moon-color: #334155;
+  --inactive-color-forMoon: #FEF9C3;
+  --inactive-color-forSun: #94A3B8;
+  --gold-color: #F6C453;
+  --gold-brown-color: #C97B32;
+  --oliver-color-saturated: #599660;
   --blue-color: #146EF5;
   --gray-color: #F0F0F0;
-  --red-color: #DF0000;
-  --orange-color: #FFBE00;
+  --dark-color-links: #151515;
   --dark-mode-back-color: #212529;
   --input-back-on-dark: #dfdfdf;
 }
@@ -20,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(to right , rgb(203, 194, 194) , rgb(173, 173, 248));
+  background-image: linear-gradient(to right , #305c35 , #C97B32);
 }
 
 .container {
@@ -85,7 +89,7 @@ body {
 
 .with-toggle-menu-left .icons-with-left a {
   margin: 0 7px;
-  color: var(--blue-color);
+  color: var(--oliver-color-saturated);
   background-color: var(--gray-color);
   padding: 5px 7px;
   border-radius: 10px;
@@ -101,48 +105,50 @@ body {
   padding: 10px;
   border-radius: 10px;
   outline: none;
-  border-color: var(--blue-color);
+  border: 2px solid var(--oliver-color-saturated);
 }
 
 .with-toggle-menu-left button {
   margin-top: 20px;
-  background-color: var(--blue-color);
+  background-color: var(--oliver-color-saturated);
   color: white;
   padding: 10px 15px;
   border-radius: 10px;
   font-size: 14px;
   transition: 0.3s;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .with-toggle-menu-left button:hover,
 .with-toggle-menu-left button:focus {
   background-color: white;
-  color: var(--blue-color);
-  border-color: var(--blue-color);
+  color: var(--oliver-color-saturated);
+  border: 2px solid var(--oliver-color-saturated);
 }
 
 body.dark-mode{
-  background-image: linear-gradient(to right , rgb(81, 81, 81) , rgb(58, 58, 83));
+  background-image: linear-gradient(to right , #27412a , rgb(23, 23, 23));
 }
 
-.container.dark-mode {
+body.dark-mode .container {
   background-color: var(--dark-mode-back-color);
 }
 
-.container.dark-mode h1{
+body.dark-mode .container h1{
   color: white;
 }
 
-.container.dark-mode .use-email{
+body.dark-mode .container .use-email{
   color: white;
 }
 
-.container.dark-mode input{
-  background-color: var(--input-back-on-dark);
+body.dark-mode .container input{
+  background-color: transparent;
+  color: white;
 }
 
-.container.dark-mode button:hover,
-.container.dark-mode button:focus{
+body.dark-mode .container button:hover,
+body.dark-mode .container button:focus{
   background-color: var(--dark-mode-back-color);
 }
